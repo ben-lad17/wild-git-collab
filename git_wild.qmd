@@ -16,6 +16,8 @@ execute:
 ### ggplot2 package) and create a plot of price vs. carat (or some other
 ### variables of your choice)
 library(ggplot2)
+library(tidyverse)
+
 data(diamonds)
 
 ggplot(data=diamonds, aes(x=carat, y = price)) + 
@@ -29,6 +31,7 @@ ggplot(data=diamonds, aes(x=carat, y = price)) +
 ### ggplot2 package) and create a subset based on filtering, e.g., 
 ### size greater than 1 carat or cut is "Ideal"
 library(ggplot2)
+library(tidyverse)
 data(diamonds)
 
 ggplot(data=diamonds, aes(x= carat, y= price)) +
@@ -41,6 +44,10 @@ ggplot(data=diamonds, aes(x= carat, y= price)) +
 ## STEP 7: Uh oh, merge conflicts!
 
 ```{r break-it-1}
+
+carat_data = diamonds |>
+  select(carat, cut, color, clarity, depth, table, price)
+
 
 ggplot(data = diamonds, aes(x = cut, y = price)) +
   geom_boxplot() +
