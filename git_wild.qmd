@@ -27,7 +27,9 @@ library(ggplot2)
 data(diamonds)
 
 ggplot(data=diamonds, aes(x= carat, y= price)) +
-       geom_point()
+       geom_point()+
+  theme_bw()
+  
 
 ```
 
