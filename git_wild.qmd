@@ -17,6 +17,7 @@ execute:
 ### variables of your choice)
 library(ggplot2)
 data(diamonds)
+library(tidyverse)
 
 ggplot(data=diamonds, aes(x=carat, y = price)) + 
   geom_point() + 
@@ -41,9 +42,8 @@ ggplot(data=diamonds, aes(x= carat, y= price)) +
 ## STEP 7: Uh oh, merge conflicts!
 
 ```{r break-it-1}
-### Both partners - delete this comment, then write some code here
-### to plot, summarize, calculate something simple using the diamonds
-### dataset.
+diamonds_data = diamonds |>
+  select(carat, cut, color, clarity, depth, table, price)
 
 
 ```
