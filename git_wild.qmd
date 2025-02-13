@@ -42,7 +42,7 @@ ggplot(data=diamonds, aes(x= carat, y= price)) +
 ## STEP 7: Uh oh, merge conflicts!
 
 ```{r break-it-1}
-diamonds_data = diamonds |>
+carat_data = diamonds |>
   select(carat, cut, color, clarity, depth, table, price)
 
 
